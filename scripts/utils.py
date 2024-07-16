@@ -9,11 +9,17 @@ from typing import List, Dict
 import pickle
 import logging
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import faiss
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
+
+langchain_tracing_v2 = os.getenv('LANGCHAIN_TRACING_V2')
+langchain_endpoint = os.getenv('LANGCHAIN_ENDPOINT')
+langchain_api_key = os.getenv('LANGCHAIN_API_KEY')
+langchain_project = os.getenv('LANGCHAIN_PROJECT')
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 def load_dataset(file_path: str) -> pd.DataFrame:
     df = pd.read_csv(file_path)

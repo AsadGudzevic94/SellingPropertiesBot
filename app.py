@@ -1,9 +1,19 @@
 import streamlit as st
 from scripts.question_answering import answer_question
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
+import os
 
-# Load environment variables
-load_dotenv()
+langchain_tracing_v2 = os.getenv('LANGCHAIN_TRACING_V2')
+langchain_endpoint = os.getenv('LANGCHAIN_ENDPOINT')
+langchain_api_key = os.getenv('LANGCHAIN_API_KEY')
+langchain_project = os.getenv('LANGCHAIN_PROJECT')
+openai_api_key = os.getenv('OPENAI_API_KEY')
+
+# Example of using these variables in LangChain setup
+# langchain.setup(endpoint=langchain_endpoint, api_key=langchain_api_key, project=langchain_project, tracing_v2=langchain_tracing_v2)
+
+# # Load environment variables
+# load_dotenv()
 
 st.title("Property Selling Advice Bot")
 

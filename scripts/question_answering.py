@@ -9,11 +9,17 @@ from langchain_core.output_parsers import StrOutputParser
 from scripts.utils import load_dataset, load_vectorstore, get_top_related_questions, load_web_content, truncate_text
 import logging
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import json
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
+
+langchain_tracing_v2 = os.getenv('LANGCHAIN_TRACING_V2')
+langchain_endpoint = os.getenv('LANGCHAIN_ENDPOINT')
+langchain_api_key = os.getenv('LANGCHAIN_API_KEY')
+langchain_project = os.getenv('LANGCHAIN_PROJECT')
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO)
